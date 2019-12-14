@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavBar, NavBarLink } from './navbar/Navbar';
+import { Sticky, StickyChildArgs, StickyContainer } from 'react-sticky';
 
 export const HomeContainer: React.FC = () => {
     const links: NavBarLink[] = [
@@ -18,12 +19,22 @@ export const HomeContainer: React.FC = () => {
     ];
     return (
         <div className="root-container">
-            <NavBar leftHeaderLinks={links}></NavBar>
-            <div className="container mx-auto">
-                <div className="flex mb-4">
-                    <p>Testing contents!</p>
+            <StickyContainer>
+                <Sticky>
+                    {({ style }: StickyChildArgs) => (
+                        <header style={style}>
+                            <NavBar leftHeaderLinks={links}></NavBar>
+                        </header>
+                    )}
+                </Sticky>
+                <div className="container mx-auto">
+                    <div className="flex mb-4">
+                        <p style={{ marginBottom: '10000px' }}>
+                            Testing contents!
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </StickyContainer>
         </div>
     );
 };
