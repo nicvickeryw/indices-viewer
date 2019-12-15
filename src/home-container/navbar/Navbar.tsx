@@ -1,23 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface NavBarLink {
+    id: number;
     url: string;
     title: string;
+    component: React.FC;
 }
 
-interface NavProps {
+export interface NavProps {
     leftHeaderLinks: NavBarLink[];
 }
 
 export const NavBar: React.FC<NavProps> = (props: NavProps) => {
     const { leftHeaderLinks } = props;
-    const linkElements = leftHeaderLinks.map((link: NavBarLink) => (
-        <a
+    const linkElements = leftHeaderLinks.map(link => (
+        <Link
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            href={link.url}
+            to={link.url}
+            key={link.id}
         >
             {link.title}
-        </a>
+        </Link>
     ));
 
     return (
