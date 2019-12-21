@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const IndicesContainer: React.FC = props => {
+export const Indices: React.FC = props => {
     return (
         <div>
             <p>Hello!</p>

@@ -6,13 +6,17 @@ export interface NavBarLink {
     url: string;
     title: string;
     component: React.FC;
+    options: {
+        isExactPath: boolean;
+    };
+    children?: NavBarLink[];
 }
 
 export interface NavProps {
     leftHeaderLinks: NavBarLink[];
 }
 
-export const NavBar: React.FC<NavProps> = (props: NavProps) => {
+export const Navbar: React.FC<NavProps> = (props: NavProps) => {
     const { leftHeaderLinks } = props;
     const linkElements = leftHeaderLinks.map(link => (
         <Link
