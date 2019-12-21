@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, NavBarLink } from './navbar/navbar';
 import { Sticky, StickyChildArgs, StickyContainer } from 'react-sticky';
 import { Route, Switch } from 'react-router';
-import { Indices } from './indices/indices';
+import { IndicesContainer } from './indices/indices';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CryptosContainer } from './cryptos/cryptos-container';
 import { DashboardContainer } from './dashboard/dashboard-contanier';
@@ -13,7 +13,7 @@ import { DashboardContainer } from './dashboard/dashboard-contanier';
 const LEFT_HEADER_LINKS: NavBarLink[] = [
     {
         title: 'Home',
-        url: '',
+        url: '/',
         id: 1,
         component: DashboardContainer,
         options: {
@@ -24,7 +24,7 @@ const LEFT_HEADER_LINKS: NavBarLink[] = [
         title: 'Indices',
         url: '/indices',
         id: 2,
-        component: Indices,
+        component: IndicesContainer,
         options: {
             isExactPath: false,
         },
