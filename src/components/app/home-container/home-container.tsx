@@ -6,6 +6,8 @@ import { IndicesContainer } from './indices/indices';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CryptosContainer } from './cryptos/cryptos-container';
 import { DashboardContainer } from './dashboard/dashboard-contanier';
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
 
 /**
  * Links to appear in the left-side of the site nav bar.
@@ -15,7 +17,7 @@ const LEFT_HEADER_LINKS: NavBarLink[] = [
         title: 'Home',
         url: '/',
         id: 1,
-        component: DashboardContainer,
+        component: <DashboardContainer />,
         options: {
             isExactPath: true,
         },
@@ -24,7 +26,7 @@ const LEFT_HEADER_LINKS: NavBarLink[] = [
         title: 'Indices',
         url: '/indices',
         id: 2,
-        component: IndicesContainer,
+        component: <IndicesContainer />,
         options: {
             isExactPath: false,
         },
@@ -33,7 +35,7 @@ const LEFT_HEADER_LINKS: NavBarLink[] = [
         title: 'Crypto-currencies',
         url: '/cryptos',
         id: 3,
-        component: CryptosContainer,
+        component: <CryptosContainer />,
         options: {
             isExactPath: false,
         },
