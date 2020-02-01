@@ -5,7 +5,7 @@ export interface NavBarLink {
     id: number;
     url: string;
     title: string;
-    component: React.FC;
+    component: JSX.Element;
     options: {
         isExactPath: boolean;
     };
