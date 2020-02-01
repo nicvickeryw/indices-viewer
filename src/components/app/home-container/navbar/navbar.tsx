@@ -17,22 +17,23 @@ export interface NavProps {
 }
 
 export const Navbar: React.FC<NavProps> = (props: NavProps) => {
-    const { leftHeaderLinks } = props;
-    const linkElements = leftHeaderLinks.map(link => (
-        <Link
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            to={link.url}
-            key={link.id}
-        >
-            {link.title}
-        </Link>
-    ));
+    const { leftHeaderLinks } = props,
+        siteTitle = 'Indices Viewer',
+        linkElements = leftHeaderLinks.map(link => (
+            <Link
+                className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                to={link.url}
+                key={link.id}
+            >
+                {link.title}
+            </Link>
+        ));
 
     return (
         <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <span className="font-semibold text-xl tracking-tight">
-                    Indices Viewer
+                    {siteTitle}
                 </span>
             </div>
             <div className="block lg:hidden">
@@ -50,9 +51,19 @@ export const Navbar: React.FC<NavProps> = (props: NavProps) => {
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div className="text-sm lg:flex-grow">{linkElements}</div>
                 <div>
-                    <p>GitHubLink</p>
+                    <LoginStatusButton />
                 </div>
             </div>
         </nav>
+    );
+};
+
+const LoginStatusButton = (props: any) => {
+    // @TODO: fetch login status data - the login in can be a popover!
+    const isLoggedIn = false;
+    return (
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Log in
+        </button>
     );
 };

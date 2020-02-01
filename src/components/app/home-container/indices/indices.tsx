@@ -15,6 +15,8 @@ export const IndicesContainer: React.FC = props => {
     // Get stock data from the API
     const { data } = useQuery(STOCKS);
 
+    console.log(data);
+
     return (
         <ul>
             {data?.stocks.map((stock: any) => (
