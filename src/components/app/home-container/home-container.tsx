@@ -6,8 +6,6 @@ import { IndicesContainer } from './indices/indices';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CryptosContainer } from './cryptos/cryptos-container';
 import { DashboardContainer } from './dashboard/dashboard-contanier';
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
 
 /**
  * Links to appear in the left-side of the site nav bar.
