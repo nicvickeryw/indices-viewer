@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LoginStatusButton } from '../../auth/login';
 
 export interface NavBarLink {
     id: number;
@@ -55,15 +56,5 @@ export const Navbar: React.FC<NavProps> = (props: NavProps) => {
                 </div>
             </div>
         </nav>
-    );
-};
-
-const LoginStatusButton = (props: any) => {
-    // @TODO: fetch login status data - the login in can be a popover!
-    const isLoggedIn = false;
-    return (
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Log in
-        </button>
     );
 };
